@@ -1,0 +1,270 @@
+/* css reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* edit keseluruhan */
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 36px;
+}
+
+h1{
+	font-size: 50px;
+	margin: 100px 0;
+	text-align: center;
+	line-height: 60px;
+	font-family:'Langar', cursive; ;
+}
+
+.container{
+	width: 800px;
+	background-color: gray;
+	margin: auto;
+	padding: 50px;
+	box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
+	border-radius: 5px;
+}
+
+.gallery li{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	/* overflow: hidden; */
+	border: 5px solid black;
+	float: left;
+	margin-right: 40px;
+	margin-bottom: 90px;
+	position: relative;
+}
+
+.gallery li .lingkaran{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    opacity: 0;
+
+}
+
+.gallery li .lingkaran .icon{
+	width: 150px;
+	height: 150px;
+	font-size: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.gallery li a:hover .lingkaran{
+	opacity: 1;
+}
+
+.gallery .superman{
+	width: 150px;
+	height: 150px;
+	border-radius: 50% ;
+	
+}
+
+.gallery .dark{
+	object-fit: cover;
+}
+
+.gallery h3{
+	text-align: center;
+	font-family:'Open Sans', sans-serif;
+	font-weight: 600;
+}
+
+.gallery h3:last-of-type{
+	margin-top: -14px;
+}
+
+.gallery li:nth-child(6) h3:last-of-type{
+	margin-top: -16px;
+}
+
+.gallery li:nth-child(6) h3:nth-last-of-type(2){
+	margin-top: -14px;
+}
+
+.gallery li:nth-child(11) h3:last-of-type{ 
+	margin-top: -18px;
+}
+
+.gallery li:nth-child(11) h3:nth-last-of-type(2){
+	margin-top: -14px;
+}
+
+.clear{
+	clear: both;
+}
+
+/* overlay */
+
+.overlay{
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	position: fixed;
+	top:0;
+	left: 0;
+	background-color: rgba(0,0, 0,0);
+	z-index: 9999;
+	transition: 1s;
+}
+
+.overlay:target{
+	width: auto;
+	height: auto;
+	text-align: center;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0,0, 0,0.7);
+}
+
+.overlay img{
+	max-height: 100%;
+	padding: 100px 0;
+	opacity: 0;
+}
+
+.overlay:target img{
+	animation: fade .5s .5s forwards;
+}
+
+.overlay .close{
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	margin-left: -40px;
+	color: white;
+	text-decoration: none;
+	background-color: black;
+	border: 1px solid white;
+	line-height: 14px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.overlay:target .next,.overlay:target .prev {
+	animation: fade .5s .5s forwards;
+}
+
+#britain img{
+	max-height: 80%;
+}
+
+#brazil img{
+	max-height: 80%;
+}
+
+#france img{ 
+	max-height: 80%;
+} 
+
+#mexico img{
+	max-height: 80%;
+}
+
+#india img{
+	margin-top: 80px;
+}
+
+#australia img{
+	margin-top: 80px;
+}
+
+#spanyol img{
+	max-height: 80%;
+}
+
+#norwegia img{
+	max-height: 80%;
+}
+
+/* navigasi */
+.next, .prev{ 
+	width: 90px;
+	height: 99px;
+	background-repeat: no-repeat;
+	background-image: url(../image/right-arrow-solid-60.png);
+	position: absolute;
+	text-indent: -9999px;
+	top: 45%;
+	margin-left: 10px;
+	opacity: 0;
+}
+
+.prev{
+	background-image: url(../image/left-arrow-solid-60.png);
+	margin-left: -100px;
+}
+
+/* animasi */
+@keyframes fade{
+	0%{
+		opacity: 0;
+	}
+
+	100%{
+		opacity: 1;
+	}
+}
+
+@keyframes zoomdanfade{
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+
+	100%{
+		transform: scale(1);
+		opacity: 1;
+	}
+}
